@@ -38,12 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("My first coontaines"),
       ),
       body: Center(
-        child: Container(
-          height : 200,
-          width : 200,
-          child: Center(
-            child:Image.asset('assets/images/image.png'),
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround, //same as css
+          crossAxisAlignment: CrossAxisAlignment.center, //same as css
+          children:<Text> [
+            Text('Hello,'),
+            Text('Hello,'),
+            Text('Flutter!'),
+          ],
         ),
       )
     );
