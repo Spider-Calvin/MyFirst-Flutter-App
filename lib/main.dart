@@ -37,13 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("My first coontaine"),
       ),
-      body:Center(
-        child: Center(child: Text('Font Styles in flutter', style: TextStyle(
-          fontSize: 25,
-          color: Colors.orange,
-          backgroundColor: Colors.blue,
-          fontWeight: FontWeight.w700,
-        ),)),
+      body: Center(
+        child: ElevatedButton( //TextButton OutlinedButton
+          onPressed: () {},
+          onLongPress: () {},
+          child: Text('Enabled'),
+        ),
       )
     );
   }
