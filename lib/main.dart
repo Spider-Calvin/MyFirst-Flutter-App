@@ -35,13 +35,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My first coontaine"),
+        title: Text("My first coontaines"),
       ),
       body: Center(
-        child: ElevatedButton( //TextButton OutlinedButton
-          onPressed: () {},
-          onLongPress: () {},
-          child: Text('Enabled'),
+        child: Container(
+          height : 200,
+          width : 200,
+          child: Center(
+            child:Image.asset('assets/images/image.png'),
+          ),
         ),
       )
     );
