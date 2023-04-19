@@ -38,15 +38,29 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("My first coontaines"),
       ),
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround, //same as css
-          crossAxisAlignment: CrossAxisAlignment.center, //same as css
-          children:<Text> [
-            Text('Hello,'),
-            Text('Hello,'),
-            Text('Flutter!'),
-          ],
-        ),
+        child: InkWell(
+          onTap: (){
+            print("Tapped on tap of ink well");
+          },
+          onDoubleTap: (){
+            print("Double Tapped on tap of ink well");
+          },
+          child: Container(
+            height: 50,
+            width: 200,
+
+            color: Colors.yellow,
+            child: Center(child: InkWell(
+                onTap: (){
+                  print("Tapped on inner text");
+                },
+                onDoubleTap: (){
+                  print("Double Tapped on on inner text");
+                },
+                child: Text("Custom Button")
+            )),
+          ),
+        )
       )
     );
   }
