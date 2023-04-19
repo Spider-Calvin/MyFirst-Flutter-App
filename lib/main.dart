@@ -38,7 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("My first coontaine"),
       ),
       body:Center(
-        child: Center(child: Text('Center Wiidget iin flutter')),
+        child: Center(child: Text('Font Styles in flutter', style: TextStyle(
+          fontSize: 25,
+          color: Colors.orange,
+          backgroundColor: Colors.blue,
+          fontWeight: FontWeight.w700,
+        ),)),
       )
     );
   }
