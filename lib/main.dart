@@ -37,29 +37,42 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("My first coontaines"),
       ),
-      body: Center(
-        child: InkWell(
-          onTap: (){
-            print("Tapped on tap of ink well");
-          },
-          onDoubleTap: (){
-            print("Double Tapped on tap of ink well");
-          },
-          child: Container(
-            height: 50,
-            width: 200,
-
-            color: Colors.yellow,
-            child: Center(child: InkWell(
-                onTap: (){
-                  print("Tapped on inner text");
-                },
-                onDoubleTap: (){
-                  print("Double Tapped on on inner text");
-                },
-                child: Text("Custom Button")
-            )),
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Column(
+              children:[
+                Container(
+                  height: 200,
+                  color : Colors.yellow
+                ),
+                Container(
+                    height: 200,
+                    color : Colors.blue
+                ),
+                Container(
+                    height: 200,
+                    color : Colors.greenAccent
+                ),
+                Container(
+                    height: 200,
+                    color : Colors.red
+                ),
+                Container(
+                    height: 200,
+                    color : Colors.yellow
+                ),
+                Container(
+                    height: 200,
+                    color : Colors.tealAccent
+                ),
+                Container(
+                    height: 200,
+                    color : Colors.blue
+                )
+              ],
+            ),
+          ],
         )
       )
     );
