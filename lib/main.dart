@@ -42,9 +42,37 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Column(
               children:[
-                Container(
-                  height: 200,
-                  color : Colors.yellow
+                Padding(
+                  padding:EdgeInsets.only(bottom: 11),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 200,
+                          height:200,
+                          margin:EdgeInsets.only(right: 11),
+                          color : Colors.yellow
+                        ),
+                        Container(
+                            width: 200,
+                            height:200,
+                            color : Colors.orange
+                        ),
+                        Container(
+                            width: 200,
+                            height:200,
+                            color : Colors.blue
+                        ),
+
+                        Container(
+                            width: 200,
+                            height:200,
+                            color : Colors.pink
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 Container(
                     height: 200,
