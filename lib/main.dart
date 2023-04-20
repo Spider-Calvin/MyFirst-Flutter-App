@@ -37,71 +37,31 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("My first coontaines"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Column(
-              children:[
-                Padding(
-                  padding:EdgeInsets.only(bottom: 11),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 200,
-                          height:200,
-                          margin:EdgeInsets.only(right: 11),
-                          color : Colors.yellow
-                        ),
-                        Container(
-                            width: 200,
-                            height:200,
-                            color : Colors.orange
-                        ),
-                        Container(
-                            width: 200,
-                            height:200,
-                            color : Colors.blue
-                        ),
-
-                        Container(
-                            width: 200,
-                            height:200,
-                            color : Colors.pink
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                    height: 200,
-                    color : Colors.blue
-                ),
-                Container(
-                    height: 200,
-                    color : Colors.greenAccent
-                ),
-                Container(
-                    height: 200,
-                    color : Colors.red
-                ),
-                Container(
-                    height: 200,
-                    color : Colors.yellow
-                ),
-                Container(
-                    height: 200,
-                    color : Colors.tealAccent
-                ),
-                Container(
-                    height: 200,
-                    color : Colors.blue
-                )
-              ],
-            ),
-          ],
-        )
+      body: ListView(
+            scrollDirection: Axis.horizontal,
+            reverse: true,
+            children:const [
+              Padding(
+                  padding:EdgeInsets.all(11),
+                   child:Text('first')
+              ),
+              Padding(
+                  padding:EdgeInsets.all(11),
+                  child:Text('second')
+              ),
+              Padding(
+                  padding:EdgeInsets.all(11),
+                  child:Text('third')
+              ),
+              Padding(
+                  padding:EdgeInsets.all(11),
+                  child:Text('fourth')
+              ),
+              Padding(
+                  padding:EdgeInsets.all(11),
+                  child:Text('fifth')
+              )
+            ],
       )
     );
   }
