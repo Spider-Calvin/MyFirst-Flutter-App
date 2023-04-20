@@ -31,37 +31,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  var arrNames = ['Calvin', 'Krupa', 'Navya', 'Panda', 'Sinchana'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My first coontaines"),
+        title: const Text("My first Flutter app"),
       ),
-      body: ListView(
-            scrollDirection: Axis.horizontal,
-            reverse: true,
-            children:const [
-              Padding(
-                  padding:EdgeInsets.all(11),
-                   child:Text('first')
-              ),
-              Padding(
-                  padding:EdgeInsets.all(11),
-                  child:Text('second')
-              ),
-              Padding(
-                  padding:EdgeInsets.all(11),
-                  child:Text('third')
-              ),
-              Padding(
-                  padding:EdgeInsets.all(11),
-                  child:Text('fourth')
-              ),
-              Padding(
-                  padding:EdgeInsets.all(11),
-                  child:Text('fifth')
-              )
-            ],
+      body: ListView.builder(itemBuilder:(context, index){
+        return( Text(arrNames[index], style: const TextStyle(fontSize: 20),));
+      },
+      itemCount:arrNames.length,
+        itemExtent: 100,
       )
     );
   }
