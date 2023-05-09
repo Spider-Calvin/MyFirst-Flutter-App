@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,35 +17,49 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
+class MyHomePage extends StatelessWidget {
   var arrNames = ['Calvin', 'Krupa', 'Navya', 'Panda', 'Sinchana'];
+
+  MyHomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("My first Flutter app"),
-      ),
-      body: ListView.builder(itemBuilder:(context, index){
-        return( Text(arrNames[index], style: const TextStyle(fontSize: 20),));
-      },
-      itemCount:arrNames.length,
-        itemExtent: 100,
-      )
+        appBar: AppBar(
+          title: const Text("My first Flutter app"),
+        ),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: Colors.cyanAccent,
+          child:Center(
+            child: Container(
+              height: 200,
+              width: 200,
+              decoration: BoxDecoration(
+                color: Colors.pink,
+                // borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  width:5,
+                  color: Colors.indigoAccent
+                ),
+                boxShadow: const [
+                  BoxShadow(
+                    blurRadius: 11,
+                    spreadRadius: 15,
+                    color:Colors.white,
+                  )
+                ],
+                shape: BoxShape.circle
+
+              ),
+            ),
+          )
+        )
     );
   }
 }
