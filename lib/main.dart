@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,7 +33,18 @@ class MyHomePage extends StatelessWidget {
         body: ListView.separated(
             itemBuilder: (context, index){
               return( ListTile(
-                leading: Text(arrNames[index], style: const TextStyle(fontSize: 20),),
+                leading: Container(
+                  child: CircleAvatar(
+                    // child:Column(
+                    //   children: [
+                    //     Image.asset('assets/images/spiderCalvin.jpeg'),
+                    //     Text(arrNames[index])
+                    //   ],
+                    // ),
+                    backgroundImage: AssetImage('assets/images/spiderCalvin.jpeg'),
+                    // maxRadius: 80,
+                  ),
+                ),
                 title:Text(arrNames[index]),
                 subtitle:Text(arrNames[index]),
                 trailing: Icon(Icons.heart_broken)
