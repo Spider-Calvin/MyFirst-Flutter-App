@@ -35,43 +35,79 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePage extends State<MyHomePage>  {
   var email = TextEditingController();
+  var colorsArray = [
+    Colors.deepOrange,
+    Colors.pink,
+    Colors.blue,
+    Colors.deepOrange,
+    Colors.amber,
+    Colors.purple,
+    Colors.yellow,
+    Colors.red,
+    Colors.cyan,
+    Colors.green
+  ];
 
   @override
   Widget build(BuildContext context) {
-    var time = DateTime.now();
+
     return Scaffold(
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body:Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("the current date is ${DateFormat('jms').format(time)}"),
-              ElevatedButton(onPressed: () async{
-                DateTime? date = await showDatePicker(
-                  context: context,
-                  initialDate:DateTime.now() ,
-                  firstDate: DateTime(2021),
-                  lastDate: DateTime(2025),
-                );
-                if (date != null ) {
-                  print("Selected date is $date");
-                }
-              }, child: Text('Select date')),
-              ElevatedButton(onPressed: () async{
-                TimeOfDay? Time = await showTimePicker(
-                  context: context,
-                  initialTime:TimeOfDay.now(),
-                  initialEntryMode: TimePickerEntryMode.dial,
-                );
-                if (Time != null ) {
-                  print("Selected Time is $Time");
-                }
-              }, child: Text('Select Time'))
-            ],
-          )
-        ),
+        body:
+
+        // GridView.count( crossAxisCount: 3,
+        //   crossAxisSpacing: 10,
+        //   mainAxisSpacing: 10,
+        //   children:[
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //     Container( color: Colors.deepOrange,),
+        //   ]
+        // ),
+
+        // GridView.extent( maxCrossAxisExtent: 100,
+        //     crossAxisSpacing: 10,
+        //     mainAxisSpacing: 10,
+        //     children:[
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //       Container( color: Colors.deepOrange,),
+        //     ]
+        // ),
+
+        // GridView.builder(itemBuilder: (context, index){
+        //   return  Container( color : colorsArray[index] );
+        // }, itemCount:colorsArray.length ,gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //  crossAxisCount: 3,
+        //   crossAxisSpacing: 10,
+        //   mainAxisSpacing: 10
+        // ), )
+
+        GridView.builder(itemBuilder: (context, index){
+          return  Container( color : colorsArray[index] );
+        }, itemCount:colorsArray.length ,gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 80,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10
+        ), )
+
+
     );
   }
 }
