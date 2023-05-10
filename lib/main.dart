@@ -32,33 +32,30 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          color: Colors.cyanAccent,
-          child:Center(
-            child: Container(
-              height: 200,
-              width: 200,
-              decoration: BoxDecoration(
-                color: Colors.pink,
-                // borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  width:5,
-                  color: Colors.indigoAccent
-                ),
-                boxShadow: const [
-                  BoxShadow(
-                    blurRadius: 11,
-                    spreadRadius: 15,
-                    color:Colors.white,
-                  )
-                ],
-                shape: BoxShape.circle
-
+        body: Column(
+          children:[
+            Expanded(
+              flex:2,
+              child: Container(
+                height:100,
+                color:Colors.cyan
               ),
             ),
-          )
+            Container(
+                height:100,
+                color:Colors.pink
+            ),
+            Container(
+                height:100,
+                color:Colors.yellow
+            ),
+            Expanded(
+              child: Container(
+                  height:100,
+                  color:Colors.purple
+              ),
+            )
+          ]
         )
     );
   }
