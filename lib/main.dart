@@ -46,8 +46,9 @@ class MyHomePage extends StatelessWidget {
                 color:Colors.pink
             ),
             Container(
-                height:100,
-                color:Colors.yellow
+              margin: EdgeInsets.all(20),
+                color:Colors.yellow,
+                child: const Padding( padding:EdgeInsets.all(20),child: Text("Hello I am text"))
             ),
             Expanded(
               child: Container(
