@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_flutterapp/ui_helper/util.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -14,8 +15,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: const TextTheme(
+          labelLarge:TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          titleLarge: TextStyle(fontSize: 14.0, fontStyle: FontStyle.normal),
+          bodyMedium: TextStyle(fontSize: 20.0, fontFamily: 'Nunito'),
+          labelSmall:  TextStyle(fontSize: 20.0, fontFamily: 'Nunito'),
+        ),
       ),
-      home:MyHomePage(),
+      home:MyHomePage()
     );
   }
 }
@@ -30,21 +38,25 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body: ListView.separated(
-            itemBuilder: (context, index){
-              return( ListTile(
-                leading: const CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/spiderCalvin.jpeg'),
-                ),
-                title:Text(arrNames[index], style: TextStyle(fontFamily: 'Nunito', fontWeight: FontWeight.w800 ),),
-                subtitle:Text(arrNames[index]),
-                trailing: Icon(Icons.heart_broken)
-              ));
-            },
-            separatorBuilder: (context, index){
-              return( const Divider(height: 20, thickness: 5,) );
-            },
-            itemCount: arrNames.length)
+        body:Column(
+          children: [
+            Text(
+              'Text with a background color',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+            Text(
+              'Text with a background color',
+              style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.pink),
+            ),Text(
+              'Text with a background color',
+              style: mytextStyle(),
+            ),
+            Text(
+              'Text with a background color',
+              style: mytextStyle2(textColor: Colors.deepOrangeAccent),
+            ),
+          ],
+        ),
     );
   }
 }
