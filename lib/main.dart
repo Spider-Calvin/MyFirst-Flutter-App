@@ -32,32 +32,19 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body: Column(
-          children:[
-            Expanded(
-              flex:2,
-              child: Container(
-                height:100,
-                color:Colors.cyan
-              ),
-            ),
-            Container(
-                height:100,
-                color:Colors.pink
-            ),
-            Container(
-              margin: EdgeInsets.all(20),
-                color:Colors.yellow,
-                child: const Padding( padding:EdgeInsets.all(20),child: Text("Hello I am text"))
-            ),
-            Expanded(
-              child: Container(
-                  height:100,
-                  color:Colors.purple
-              ),
-            )
-          ]
-        )
+        body: ListView.separated(
+            itemBuilder: (context, index){
+              return( ListTile(
+                leading: Text(arrNames[index], style: const TextStyle(fontSize: 20),),
+                title:Text(arrNames[index]),
+                subtitle:Text(arrNames[index]),
+                trailing: Icon(Icons.heart_broken)
+              ));
+            },
+            separatorBuilder: (context, index){
+              return( const Divider(height: 20, thickness: 5,) );
+            },
+            itemCount: arrNames.length)
     );
   }
 }
