@@ -17,10 +17,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         textTheme: const TextTheme(
           labelLarge:TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(fontSize: 14.0, fontStyle: FontStyle.normal),
-          bodyMedium: TextStyle(fontSize: 20.0, fontFamily: 'Nunito'),
-          labelSmall:  TextStyle(fontSize: 20.0, fontFamily: 'Nunito'),
         ),
       ),
       home:MyHomePage()
@@ -38,24 +34,35 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body:Column(
-          children: [
-            Text(
-              'Text with a background color',
-              style: Theme.of(context).textTheme.labelLarge,
+        body:Center(
+          child: Container(
+            margin:const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                Card(
+                  elevation: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Calvin',
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 10,
+                  shadowColor: Colors.deepOrange,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'krupa',
+                      style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.pink),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Text(
-              'Text with a background color',
-              style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.pink),
-            ),Text(
-              'Text with a background color',
-              style: mytextStyle(),
-            ),
-            Text(
-              'Text with a background color',
-              style: mytextStyle2(textColor: Colors.deepOrangeAccent),
-            ),
-          ],
+          ),
         ),
     );
   }
