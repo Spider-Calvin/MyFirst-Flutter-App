@@ -25,13 +25,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  var arrNames = ['Calvin', 'Krupa', 'Navya', 'Panda', 'Sinchana'];
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePage createState() => _MyHomePage();
+}
+
+
+class _MyHomePage extends State<MyHomePage>  {
   var email = TextEditingController();
 
-  MyHomePage({super.key});
   @override
   Widget build(BuildContext context) {
+    var time = DateTime.now();
     return Scaffold(
         appBar: AppBar(
           title: const Text("My first Flutter app"),
@@ -40,97 +47,14 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 300,
-                margin: EdgeInsets.all(10),
-                child: TextField(
-                  controller: email,
-                decoration: InputDecoration(
-                  // labelText: 'Email',
-                  hintText: 'Email enter',
-                  prefixIcon: Icon(Icons.person),
-                  suffixText: 'So',
-                  suffixIcon: IconButton(
-                    icon: Icon(Icons.clear),
-                    onPressed: (){
-
-                    },
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide: BorderSide(
-                      color: Colors.blue,
-                      width: 2.0,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide: BorderSide(
-                      color: Colors.yellow,
-                      width: 2.0,
-                    ),
-                  ),
-                )
-                ),
-              ),
-              Container(
-                width: 300,
-                margin: EdgeInsets.all(10),
-                child: TextField(
-                  obscureText: true,
-                    keyboardType: TextInputType.number,
-                    obscuringCharacter: '*',
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        borderSide: BorderSide(
-                          color: Colors.blue,
-                          width: 2.0,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        borderSide: BorderSide(
-                          color: Colors.yellow,
-                          width: 2.0,
-                        ),
-                      ),
-                    )
-                ),
-              ),
-              Container(
-                width: 300,
-                margin: EdgeInsets.all(10),
-                child: TextField(
-                    enabled: false,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        borderSide: BorderSide(
-                          color: Colors.pink,
-                          width: 2.0,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        borderSide: BorderSide(
-                          color: Colors.blue,
-                          width: 2.0,
-                        ),
-                      ),
-                      disabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        borderSide: BorderSide(
-                          color: Colors.red,
-                          width: 2.0,
-                        ),
-                      ),
-                    )
-                ),
-              ),
+              Text("the current date is $time"),
+              Text("Date ${time.day}"),
+              Text("month ${time.month}"),
+              Text("Day ${time.weekday}"),
               ElevatedButton(onPressed: (){
-                String uEmail = email.text.toString();
-                print('$uEmail');
+                setState((){
+
+                });
               }, child: Text('Continue'))
             ],
           )
