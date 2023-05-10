@@ -48,9 +48,27 @@ class _MyHomePage extends State<MyHomePage>  {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("the current date is ${DateFormat('jms').format(time)}"),
-              ElevatedButton(onPressed: (){
-                setState((){});
-              }, child: Text('Continue'))
+              ElevatedButton(onPressed: () async{
+                DateTime? date = await showDatePicker(
+                  context: context,
+                  initialDate:DateTime.now() ,
+                  firstDate: DateTime(2021),
+                  lastDate: DateTime(2025),
+                );
+                if (date != null ) {
+                  print("Selected date is $date");
+                }
+              }, child: Text('Select date')),
+              ElevatedButton(onPressed: () async{
+                TimeOfDay? Time = await showTimePicker(
+                  context: context,
+                  initialTime:TimeOfDay.now(),
+                  initialEntryMode: TimePickerEntryMode.dial,
+                );
+                if (Time != null ) {
+                  print("Selected Time is $Time");
+                }
+              }, child: Text('Select Time'))
             ],
           )
         ),
