@@ -33,19 +33,10 @@ class MyHomePage extends StatelessWidget {
         body: ListView.separated(
             itemBuilder: (context, index){
               return( ListTile(
-                leading: Container(
-                  child: CircleAvatar(
-                    // child:Column(
-                    //   children: [
-                    //     Image.asset('assets/images/spiderCalvin.jpeg'),
-                    //     Text(arrNames[index])
-                    //   ],
-                    // ),
-                    backgroundImage: AssetImage('assets/images/spiderCalvin.jpeg'),
-                    // maxRadius: 80,
-                  ),
+                leading: const CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/spiderCalvin.jpeg'),
                 ),
-                title:Text(arrNames[index]),
+                title:Text(arrNames[index], style: TextStyle(fontFamily: 'Nunito', fontWeight: FontWeight.w800 ),),
                 subtitle:Text(arrNames[index]),
                 trailing: Icon(Icons.heart_broken)
               ));
