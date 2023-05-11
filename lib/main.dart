@@ -41,33 +41,24 @@ class _MyHomePage extends State<MyHomePage>  {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body:Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-                minHeight: 30,
-                minWidth: 100,
-                // maxWidth: 100,
-                // maxHeight: 30
-            ),
-            child: SizedBox.shrink(
-              child: ElevatedButton(onPressed: (){}, child: Text("Click"),),
-            ),
+        body: RichText(
+          text: TextSpan(
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 21,
+              ),
+              children:<TextSpan>[
+                TextSpan(text: 'Hello ', ),
+                TextSpan(text: 'World! ', style: TextStyle(fontSize: 18, color: Colors.blue, fontWeight: FontWeight.bold)),
+                TextSpan(text: 'Welcome to ',),
+                TextSpan(text: 'Flutter', style: TextStyle(fontWeight: FontWeight.bold,
+                  fontSize: 35, color: Colors.deepOrangeAccent,
+                  fontStyle:FontStyle.italic,
+                )),
+
+              ]
           ),
         )
-
-
-
-      //   child: SizedBox.expand(
-      //   child: ElevatedButton(onPressed: (){}, child: Text("Click"),),
-      // ))
-
-
-      //
-      // SizedBox(
-      //   width: 200,
-      //   height: 50,
-      //   child: ElevatedButton(onPressed: (){}, child: Text("Click"),),
-      // )),
 
     );
   }
