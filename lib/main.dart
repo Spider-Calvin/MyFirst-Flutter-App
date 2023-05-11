@@ -55,57 +55,28 @@ class _MyHomePage extends State<MyHomePage>  {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body:
-
-        // GridView.count( crossAxisCount: 3,
-        //   crossAxisSpacing: 10,
-        //   mainAxisSpacing: 10,
-        //   children:[
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //     Container( color: Colors.deepOrange,),
-        //   ]
-        // ),
-
-        // GridView.extent( maxCrossAxisExtent: 100,
-        //     crossAxisSpacing: 10,
-        //     mainAxisSpacing: 10,
-        //     children:[
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //       Container( color: Colors.deepOrange,),
-        //     ]
-        // ),
-
-        // GridView.builder(itemBuilder: (context, index){
-        //   return  Container( color : colorsArray[index] );
-        // }, itemCount:colorsArray.length ,gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //  crossAxisCount: 3,
-        //   crossAxisSpacing: 10,
-        //   mainAxisSpacing: 10
-        // ), )
-
-        GridView.builder(itemBuilder: (context, index){
-          return  Container( color : colorsArray[index] );
-        }, itemCount:colorsArray.length ,gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 80,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10
-        ), )
+        body:Container(
+          width: 300,
+          height: 300,
+          child: Stack(
+            children: [
+              Container(
+                height: 200,
+                width: 200,
+                color: colorsArray[0],
+              ),
+              Positioned(
+                left: 21,
+                top: 21,
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  color: colorsArray[1],
+                ),
+              ),
+            ],
+          ),
+        )
 
 
     );
