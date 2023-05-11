@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:my_first_flutterapp/widgets/roundedbtn.dart';
+import 'package:my_first_flutterapp/ui_helper/util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,23 +57,35 @@ class _MyHomePage extends State<MyHomePage>  {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body:Container(
-          width: 300,
-          height: 300,
-          child: Stack(
+        body:Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 200,
-                width: 200,
-                color: colorsArray[0],
+                width: 150,
+                height: 50,
+                child: RoundedButton(
+                  btnName: 'Play',
+                  icon: Icon(Icons.play_arrow),
+                  textStyle: mTextStyle16(),
+                  callback: () {
+                    print("Logged in!!");
+                  },
+                ),
               ),
-              Positioned(
-                left: 21,
-                top: 21,
-                child: Container(
-                  height: 200,
-                  width: 200,
-                  color: colorsArray[1],
+              Container(
+                height: 11,
+              ),
+              Container(
+                width: 150,
+                height: 50,
+                child: RoundedButton(
+                  btnName: 'Press',
+                  bgColor: Colors.orange,
+                  textStyle: mTextStyle21(),
+                  callback: () {
+                    print("Logged in!!");
+                  },
                 ),
               ),
             ],
