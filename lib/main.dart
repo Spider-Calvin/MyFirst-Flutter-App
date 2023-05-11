@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
-import 'package:my_first_flutterapp/widgets/roundedbtn.dart';
-import 'package:my_first_flutterapp/ui_helper/util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,37 +54,79 @@ class _MyHomePage extends State<MyHomePage>  {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body:Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        body: Container(
+          child:Wrap(
+            direction: Axis.vertical,
+            alignment: WrapAlignment.spaceEvenly,
+            spacing: 11,
+            runSpacing: 11,
             children: [
               Container(
-                width: 150,
-                height: 50,
-                child: RoundedButton(
-                  btnName: 'Play',
-                  icon: Icon(Icons.play_arrow),
-                  textStyle: mTextStyle16(),
-                  callback: () {
-                    print("Logged in!!");
-                  },
-                ),
+                width: 100,
+                height: 100,
+                color: Colors.blue,
               ),
+
               Container(
-                height: 11,
+                width: 100,
+                height: 100,
+                color: Colors.red,
               ),
+
               Container(
-                width: 150,
-                height: 50,
-                child: RoundedButton(
-                  btnName: 'Press',
-                  bgColor: Colors.orange,
-                  textStyle: mTextStyle21(),
-                  callback: () {
-                    print("Logged in!!");
-                  },
-                ),
+                width: 100,
+                height: 100,
+                color: Colors.cyan,
               ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.teal,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.purple,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.black,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.amber,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.green,
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.orange,
+              ),
+
             ],
           ),
         )
