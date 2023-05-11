@@ -41,22 +41,11 @@ class _MyHomePage extends State<MyHomePage>  {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body: RichText(
-          text: TextSpan(
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 21,
-              ),
-              children:<TextSpan>[
-                TextSpan(text: 'Hello ', ),
-                TextSpan(text: 'World! ', style: TextStyle(fontSize: 18, color: Colors.blue, fontWeight: FontWeight.bold)),
-                TextSpan(text: 'Welcome to ',),
-                TextSpan(text: 'Flutter', style: TextStyle(fontWeight: FontWeight.bold,
-                  fontSize: 35, color: Colors.deepOrangeAccent,
-                  fontStyle:FontStyle.italic,
-                )),
-
-              ]
+        body: Center(
+          child: Icon(
+            Icons.play_circle_outline,
+            size: 100,
+            color: Colors.orange,
           ),
         )
 
