@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,10 +43,18 @@ class _MyHomePage extends State<MyHomePage>  {
           title: const Text("My first Flutter app"),
         ),
         body: Center(
-          child: Icon(
-            Icons.play_circle_outline,
-            size: 100,
-            color: Colors.orange,
+          child: Column(
+            children: [
+              Icon(
+                Icons.play_circle_outline,
+                size: 100,
+                color: Colors.orange,
+              ),
+              FaIcon(FontAwesomeIcons.amazon,
+                size: 100,
+                color: Colors.orange,
+              )
+            ],
           ),
         )
 
