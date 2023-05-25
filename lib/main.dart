@@ -42,21 +42,26 @@ class _MyHomePage extends State<MyHomePage>  {
         appBar: AppBar(
           title: const Text("My first Flutter app"),
         ),
-        body: Center(
-          child: Column(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.blueGrey,
+          child: Stack(
             children: [
-              Icon(
-                Icons.play_circle_outline,
-                size: 100,
-                color: Colors.orange,
-              ),
-              FaIcon(FontAwesomeIcons.amazon,
-                size: 100,
-                color: Colors.orange,
+            Positioned(
+              bottom: 50,
+              right: 41,
+
+              child: Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.white
+                      ),
               )
             ],
+
           ),
-        )
+        ),
 
     );
   }
